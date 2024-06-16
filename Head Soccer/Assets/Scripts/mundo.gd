@@ -376,8 +376,9 @@ func _on_poder_area_2d_get_estado(estampa_select, indice_poder, body):
 		match indice_poder:
 			"achicar":
 				print("Poder achicar arco propio")
+				print(jugador)
 
-				if jugador == "personaje_1":
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.Poder.achicar_arco($Arco)
 					self.traba1.position.y = 510
 					self.traba1.get_child(0).polygon[0] = Vector2(-3,425)
@@ -391,8 +392,8 @@ func _on_poder_area_2d_get_estado(estampa_select, indice_poder, body):
 					self.traba2.get_child(0).polygon[3] = Vector2(1285,417)
 			"agrandar": 
 				print("Poder agrandar arco contrario")
-
-				if jugador == "personaje_1":
+				print(jugador)
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.Poder.agrandar_arco($Arco2)
 					self.traba2.position.y = 390
 					self.traba2.get_child(0).polygon[0] = Vector2(1135,379)
@@ -405,14 +406,14 @@ func _on_poder_area_2d_get_estado(estampa_select, indice_poder, body):
 			"aturdir": 
 				print("Poder aturdir enemigo")
 
-				if jugador == "personaje_1":
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.Poder.aturdir(self.personaje_2_spawn.personaje)
 				else:
 					self.Poder.aturdir(self.personaje1_spawn.personaje)
 			"congelar": 
 				print("Poder congelar contrario")
 
-				if jugador == "personaje_1":
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.Poder.congelar(self.personaje_2_spawn.personaje)
 				else:
 					self.Poder.congelar(self.personaje1_spawn.personaje)
@@ -420,7 +421,7 @@ func _on_poder_area_2d_get_estado(estampa_select, indice_poder, body):
 				print("Poder teledirigido")
 				self.traba1.constant_linear_velocity = Vector2(1000,-600)
 				self.traba2.constant_linear_velocity = Vector2(-1000,-600)
-				if jugador == "personaje_1":
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.fuerza = Vector2(500,300)
 					self.arco_select = $Arco2
 				else:
@@ -436,9 +437,9 @@ func _on_poder_area_2d_get_estado(estampa_select, indice_poder, body):
 		$powerDown_sound.play()
 		match indice_poder:
 			"achicar":
-				print("Poder achicar arco contrario")
+				print("Poder achicar arco propio")
 				
-				if jugador == "personaje_1":
+				if jugador == "personaje_2" or jugador == "botin_2":
 					self.Poder.achicar_arco($Arco2)
 					self.traba2.position.y = 510
 					self.traba2.get_child(0).polygon[0] = Vector2(1154,418)
@@ -452,8 +453,9 @@ func _on_poder_area_2d_get_estado(estampa_select, indice_poder, body):
 					self.traba1.get_child(0).polygon[2] = Vector2(96,467)
 			"agrandar": 
 				print("Poder agrandar arco propio")
+				print(jugador)
 
-				if jugador == "personaje_1":
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.Poder.agrandar_arco($Arco)
 					self.traba1.position.y = 390
 					self.traba1.get_child(0).polygon[0] = Vector2(-8,387)
@@ -465,15 +467,16 @@ func _on_poder_area_2d_get_estado(estampa_select, indice_poder, body):
 					self.traba2.get_child(0).polygon[3] = Vector2(1289,377)
 			"aturdir": 
 				print("Poder aturdir")
+				print(jugador)
 
-				if jugador == "personaje_1":
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.Poder.aturdir(self.personaje1_spawn.personaje)
 				else:
 					self.Poder.aturdir(self.personaje_2_spawn.personaje)
 			"congelar": 
 				print("Poder congelar propio")
 
-				if jugador == "personaje_1":
+				if jugador == "personaje_1" or jugador == "botin_1":
 					self.Poder.congelar(self.personaje1_spawn.personaje)
 				else:
 					self.Poder.congelar(self.personaje_2_spawn.personaje)
