@@ -1,0 +1,133 @@
+[gd_scene load_steps=12 format=3 uid="uid://dcaeei3wueha3"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/button_play.gd" id="1_2nrme"]
+[ext_resource type="Script" path="res://Assets/Scripts/menu.gd" id="1_tnmvo"]
+[ext_resource type="PackedScene" uid="uid://cokvpe8ebyqqa" path="res://scenes/options.tscn" id="5_ujbxj"]
+[ext_resource type="Texture2D" uid="uid://b3irs4fau33q8" path="res://Assets/images/objetos_escena/Titulo.png" id="5_w6a31"]
+[ext_resource type="Texture2D" uid="uid://dqjp3xcp382so" path="res://Assets/images/objetos_escena/Fondo.jpg" id="6_rqvol"]
+[ext_resource type="Texture2D" uid="uid://vm08ahkihual" path="res://Assets/images/objetos_escena/coin.png" id="9_i275h"]
+
+[sub_resource type="SystemFont" id="SystemFont_gb2le"]
+font_names = PackedStringArray("On Fire Free Trial")
+
+[sub_resource type="SystemFont" id="SystemFont_cwdhl"]
+font_names = PackedStringArray("On Fire Free Trial")
+
+[sub_resource type="SystemFont" id="SystemFont_u63fe"]
+font_names = PackedStringArray("On Fire Free Trial")
+
+[sub_resource type="SystemFont" id="SystemFont_mc6q4"]
+font_names = PackedStringArray("Upheaval TT (BRK)")
+
+[sub_resource type="LabelSettings" id="LabelSettings_80p5m"]
+font = SubResource("SystemFont_mc6q4")
+font_size = 75
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+script = ExtResource("1_tnmvo")
+
+[node name="VBoxBotones" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -2.0
+offset_top = 255.0
+offset_right = 315.0
+offset_bottom = 720.0
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="btn_play" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_gb2le")
+theme_override_font_sizes/font_size = 64
+text = "PLAY"
+alignment = 0
+script = ExtResource("1_2nrme")
+
+[node name="btn_store" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_gb2le")
+theme_override_font_sizes/font_size = 64
+text = "STORE"
+alignment = 0
+
+[node name="btn_options" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_cwdhl")
+theme_override_font_sizes/font_size = 64
+text = "OPTIONS
+"
+alignment = 0
+
+[node name="btn_mod_ball" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_u63fe")
+theme_override_font_sizes/font_size = 64
+text = "MOD BALL"
+alignment = 0
+
+[node name="btn_exit" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_cwdhl")
+theme_override_font_sizes/font_size = 64
+text = "EXIT
+"
+alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 593.0
+offset_right = 1008.0
+offset_bottom = 738.0
+pivot_offset = Vector2(347, 70)
+texture = ExtResource("5_w6a31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(642.75, 359.25)
+scale = Vector2(1.3229, 0.738169)
+texture = ExtResource("6_rqvol")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1228, 70)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_i275h")
+
+[node name="Label_coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1071.0
+offset_top = 28.0
+offset_right = 1180.0
+offset_bottom = 100.0
+label_settings = SubResource("LabelSettings_80p5m")
+horizontal_alignment = 2
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="options" parent="." instance=ExtResource("5_ujbxj")]
+visible = false
+layout_mode = 1
+
+[connection signal="button_up" from="VBoxBotones/btn_play" to="VBoxBotones/btn_play" method="_on_button_up"]
+[connection signal="button_up" from="VBoxBotones/btn_store" to="." method="_on_btn_store_button_up"]
+[connection signal="button_up" from="VBoxBotones/btn_options" to="." method="_on_btn_options_button_up"]
+[connection signal="button_up" from="VBoxBotones/btn_mod_ball" to="." method="_on_btn_mod_ball_button_up"]
+[connection signal="button_up" from="VBoxBotones/btn_exit" to="." method="_on_btn_exit_button_up"]

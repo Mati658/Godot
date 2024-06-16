@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://snmuvup7kngg"]
+
+[ext_resource type="Texture2D" uid="uid://l0pmx40uhv60" path="res://Assets/images/particulas/peces/pez2Sheet.png" id="1_qfsjr"]
+[ext_resource type="Script" path="res://Assets/images/particulas/peces/pez.gd" id="2_b0bss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vjmc"]
+atlas = ExtResource("1_qfsjr")
+region = Rect2(0, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byjcv"]
+atlas = ExtResource("1_qfsjr")
+region = Rect2(400, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53opg"]
+atlas = ExtResource("1_qfsjr")
+region = Rect2(800, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q336a"]
+atlas = ExtResource("1_qfsjr")
+region = Rect2(1200, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdt6h"]
+atlas = ExtResource("1_qfsjr")
+region = Rect2(1600, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea4v8"]
+atlas = ExtResource("1_qfsjr")
+region = Rect2(2000, 0, 400, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wldkc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vjmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byjcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53opg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q336a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdt6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea4v8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="pez2" type="AnimatedSprite2D"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_wldkc")
+autoplay = "default"
+frame_progress = 0.223604
+script = ExtResource("2_b0bss")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-156, 0)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

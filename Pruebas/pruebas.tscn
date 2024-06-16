@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6dmki1cf77rp"]
+
+[ext_resource type="Script" path="res://personajee.gd" id="1_6mjsl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixubm"]
+radius = 31.0
+height = 132.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plu0u"]
+size = Vector2(1205, 53)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wu88v"]
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rl0ba"]
+radius = 20.0998
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(536, 375)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_6mjsl")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+offset_left = -31.0
+offset_top = -66.0
+offset_right = 31.0
+offset_bottom = 66.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_ixubm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578, 634.5)
+shape = SubResource("RectangleShape2D_plu0u")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -3.0
+offset_top = 608.0
+offset_right = 1177.0
+offset_bottom = 652.0
+color = Color(0.219608, 1, 1, 1)
+
+[node name="pelota" type="RigidBody2D" parent="."]
+position = Vector2(515, 162)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_wu88v")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="pelota"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelota"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_rl0ba")

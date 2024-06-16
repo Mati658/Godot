@@ -1,0 +1,185 @@
+[gd_scene load_steps=33 format=3 uid="uid://bxwokruvpvm64"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/pelota.gd" id="1_hi631"]
+[ext_resource type="Texture2D" uid="uid://hamovauil07r" path="res://Assets/images/pelotas/Pelota1.png" id="1_qx068"]
+[ext_resource type="Script" path="res://Assets/Scripts/Line.gd" id="2_r1xrf"]
+[ext_resource type="Texture2D" uid="uid://34ly1y8gd6le" path="res://Assets/images/particulas/rayo/estela_rayo.png" id="3_4i2vw"]
+[ext_resource type="Texture2D" uid="uid://ctt2pehff8vqt" path="res://Assets/images/particulas/rayo/estela_rayo2.png" id="4_d3jwk"]
+[ext_resource type="Texture2D" uid="uid://duaydxj4rpa2c" path="res://Assets/images/particulas/coin/coin1.png" id="4_wbedn"]
+[ext_resource type="Texture2D" uid="uid://jcnydunyq71n" path="res://Assets/images/particulas/coin/coin2.png" id="5_beasu"]
+[ext_resource type="Texture2D" uid="uid://c133wx8r86y8r" path="res://Assets/images/particulas/rayo/estela_rayo11.png" id="5_btn66"]
+[ext_resource type="Texture2D" uid="uid://ymdyrs4df334" path="res://Assets/images/particulas/rayo/estela_rayo12.png" id="6_krkf4"]
+[ext_resource type="Texture2D" uid="uid://dhlq6x6fpvmnj" path="res://Assets/images/particulas/coin/coin3.png" id="6_x8teh"]
+[ext_resource type="Texture2D" uid="uid://c6fpbk2sof5xg" path="res://Assets/images/particulas/rayo/estela_rayo3.png" id="7_8iyje"]
+[ext_resource type="Texture2D" uid="uid://dtinrdd241dty" path="res://Assets/images/particulas/coin/coin4.png" id="7_j8l3b"]
+[ext_resource type="Texture2D" uid="uid://djg4kftoidroh" path="res://Assets/images/particulas/rayo/estela_rayo4.png" id="8_cbrdi"]
+[ext_resource type="Texture2D" uid="uid://cdt6l2f7xioe6" path="res://Assets/images/particulas/coin/coin5.png" id="8_vpmoi"]
+[ext_resource type="Texture2D" uid="uid://bp4lf38kd5ggj" path="res://Assets/images/particulas/rayo/estela_rayo5.png" id="9_bjs2s"]
+[ext_resource type="Texture2D" uid="uid://r0nry7n2kcmp" path="res://Assets/images/particulas/coin/coin6.png" id="9_kb3bj"]
+[ext_resource type="Texture2D" uid="uid://4d57haxe1fjp" path="res://Assets/images/particulas/rayo/estela_rayo6.png" id="10_21y21"]
+[ext_resource type="Texture2D" uid="uid://bmuct5ysbbt4r" path="res://Assets/images/particulas/rayo/estela_rayo7.png" id="11_tjsar"]
+[ext_resource type="Texture2D" uid="uid://bquqa8lqcm2hm" path="res://Assets/images/particulas/rayo/estela_rayo8.png" id="12_62ydu"]
+[ext_resource type="Texture2D" uid="uid://dp4dvdors1e5o" path="res://Assets/images/particulas/rayo/estela_rayo9.png" id="13_7nw67"]
+[ext_resource type="Texture2D" uid="uid://bw0ecsrlknsl0" path="res://Assets/images/particulas/rayo/estela_rayo10.png" id="14_apb5u"]
+[ext_resource type="Texture2D" uid="uid://1mntml6d0ati" path="res://Assets/images/particulas/particula destello.png" id="22_vbxl3"]
+[ext_resource type="AudioStream" uid="uid://c5wwwd3718tou" path="res://Assets/Audio/Sonidos/Patear.mp3" id="23_pvc8x"]
+[ext_resource type="AudioStream" uid="uid://cah1ifu0ipgdd" path="res://Assets/Audio/Sonidos/PelotaRebote.mp3" id="24_tt1xh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vub7d"]
+rough = true
+bounce = 0.8
+
+[sub_resource type="Curve" id="Curve_gogp0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_hha6h"]
+colors = PackedColorArray(0, 1, 0.729412, 0, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_6o61d"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_bslfy"]
+frames = 12
+speed_scale = 5.0
+frame_0/texture = ExtResource("3_4i2vw")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("4_d3jwk")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("7_8iyje")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("8_cbrdi")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("9_bjs2s")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("10_21y21")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("11_tjsar")
+frame_6/duration = 0.1
+frame_7/texture = ExtResource("12_62ydu")
+frame_7/duration = 0.1
+frame_8/texture = ExtResource("13_7nw67")
+frame_8/duration = 0.1
+frame_9/texture = ExtResource("14_apb5u")
+frame_9/duration = 0.1
+frame_10/texture = ExtResource("5_btn66")
+frame_10/duration = 0.1
+frame_11/texture = ExtResource("6_krkf4")
+frame_11/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_v1q2x"]
+frames = 6
+frame_0/texture = ExtResource("4_wbedn")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("5_beasu")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("6_x8teh")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("7_j8l3b")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("8_vpmoi")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("9_kb3bj")
+frame_5/duration = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0kpfo"]
+radius = 27.4016
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fe2qn"]
+radius = 214.002
+
+[node name="pelota" type="RigidBody2D" groups=["gr_pelota"]]
+z_index = 1
+collision_layer = 4
+collision_mask = 27
+physics_material_override = SubResource("PhysicsMaterial_vub7d")
+continuous_cd = 2
+script = ExtResource("1_hi631")
+metadata/_edit_group_ = true
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-536, -272)
+width = 40.0
+width_curve = SubResource("Curve_gogp0")
+gradient = SubResource("Gradient_hha6h")
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+script = ExtResource("2_r1xrf")
+
+[node name="Line_rayo" type="Line2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+width = 80.0
+width_curve = SubResource("Curve_6o61d")
+texture = SubResource("AnimatedTexture_bslfy")
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="particulas_coin" type="CPUParticles2D" parent="."]
+emitting = false
+texture = SubResource("AnimatedTexture_v1q2x")
+emission_shape = 1
+emission_sphere_radius = 30.0
+angular_velocity_max = 720.0
+radial_accel_min = 50.0
+radial_accel_max = 100.0
+scale_amount_min = 0.03
+scale_amount_max = 0.03
+
+[node name="particulas_hielo" type="CPUParticles2D" parent="."]
+position = Vector2(2.125, -1.54999)
+scale = Vector2(0.7, 0.7)
+emitting = false
+amount = 50
+speed_scale = 0.5
+texture = ExtResource("22_vbxl3")
+emission_shape = 1
+emission_sphere_radius = 64.0
+gravity = Vector2(0, 20)
+angular_velocity_min = 27.05
+angular_velocity_max = 100.0
+scale_amount_min = 0.01
+scale_amount_max = 0.04
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.054, 0.054)
+texture = ExtResource("1_qx068")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.325, 0.19)
+scale = Vector2(1.01, 1.01)
+shape = SubResource("CircleShape2D_0kpfo")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -2)
+collision_mask = 202
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_fe2qn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="patear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_pvc8x")
+bus = &"SFX"
+
+[node name="pelota_rebote" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_tt1xh")
+volume_db = -6.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Line2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Line2D" method="_on_area_2d_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

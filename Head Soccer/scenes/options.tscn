@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=3 uid="uid://cokvpe8ebyqqa"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/options.gd" id="1_3ljyd"]
+[ext_resource type="Script" path="res://Assets/Scripts/btn_back.gd" id="2_ugu5q"]
+
+[sub_resource type="SystemFont" id="SystemFont_umtme"]
+font_names = PackedStringArray("On Fire Free Trial")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_es5y4"]
+bg_color = Color(0.227451, 0.811765, 0.6, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooycd"]
+bg_color = Color(0.227451, 0.811765, 0.6, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="SystemFont" id="SystemFont_8l11e"]
+font_names = PackedStringArray("On Fire Free Trial")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1coh8"]
+font = SubResource("SystemFont_8l11e")
+font_size = 51
+
+[node name="options" type="Control" groups=["options_grp"]]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.466
+anchor_right = 0.5
+anchor_bottom = 0.467
+offset_left = -640.0
+offset_top = -335.52
+offset_right = 640.0
+offset_bottom = 383.76
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ljyd")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -219.0
+offset_top = 137.0
+offset_right = 224.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.313726, 0.313726, 0.313726, 0.690196)
+
+[node name="VBoxBotones" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = 16.0
+offset_right = 210.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="btn_back" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_umtme")
+theme_override_font_sizes/font_size = 64
+text = "BACK
+"
+script = ExtResource("2_ugu5q")
+
+[node name="slider_music" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 38.0001
+offset_top = -185.0
+offset_right = 122.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.01, 2.01)
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_es5y4")
+min_value = -40.0
+max_value = 0.0
+
+[node name="slider_SFX" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 38.0001
+offset_top = -80.0
+offset_right = 122.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.01, 2.01)
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ooycd")
+min_value = -40.0
+max_value = 0.0
+
+[node name="lbl_music" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.359
+anchor_right = 0.391
+anchor_bottom = 0.359
+offset_left = -65.48
+offset_top = -83.48
+offset_right = 64.52
+offset_bottom = -24.48
+text = "Music"
+label_settings = SubResource("LabelSettings_1coh8")
+
+[node name="lbl_SFX" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.5
+anchor_right = 0.391
+anchor_bottom = 0.505
+offset_left = -65.48
+offset_top = -80.0
+offset_right = 64.52
+offset_bottom = -24.6
+text = "SFX
+"
+label_settings = SubResource("LabelSettings_1coh8")
+
+[connection signal="button_down" from="VBoxBotones/btn_back" to="." method="_on_btn_back_button_down"]
+[connection signal="button_up" from="VBoxBotones/btn_back" to="VBoxBotones/btn_back" method="_on_button_up"]
+[connection signal="value_changed" from="slider_music" to="." method="_on_slider_music_value_changed"]
+[connection signal="value_changed" from="slider_SFX" to="." method="_on_slider_sfx_value_changed"]

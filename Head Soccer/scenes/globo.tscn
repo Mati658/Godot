@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvwlluoxmb6ja"]
+
+[ext_resource type="Texture2D" uid="uid://bccob6d68pio3" path="res://Assets/images/objetos_escena/globo de fuego.png" id="1_pmu5t"]
+[ext_resource type="Script" path="res://Assets/Scripts/globo.gd" id="2_eviyu"]
+
+[sub_resource type="Gradient" id="Gradient_w5lqx"]
+offsets = PackedFloat32Array(0, 0.435065)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dsx0x"]
+gradient = SubResource("Gradient_w5lqx")
+width = 256
+height = 256
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_svv4j"]
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_nlesj"]
+offsets = PackedFloat32Array(0, 0.577922)
+colors = PackedColorArray(1, 1, 0.290196, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fs48o"]
+gradient = SubResource("Gradient_nlesj")
+width = 1000
+height = 1000
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="globo" type="Sprite2D"]
+z_as_relative = false
+y_sort_enabled = true
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_pmu5t")
+script = ExtResource("2_eviyu")
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 1, 0.196078)
+texture = SubResource("GradientTexture2D_dsx0x")
+texture_scale = 5.0
+height = 512.0
+
+[node name="luz" type="Sprite2D" parent="PointLight2D"]
+modulate = Color(1, 1, 0.290196, 0.392157)
+material = SubResource("CanvasItemMaterial_svv4j")
+scale = Vector2(1.48, 1.48)
+texture = SubResource("GradientTexture2D_fs48o")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-420, 440)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

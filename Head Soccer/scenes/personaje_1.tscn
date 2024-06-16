@@ -1,0 +1,255 @@
+[gd_scene load_steps=10 format=3 uid="uid://h5srt3ekb4hl"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/personaje_2.gd" id="1_85vcs"]
+[ext_resource type="Texture2D" uid="uid://pr1sggm6m1rx" path="res://Assets/images/particulas/particula estrella.png" id="2_3tt2c"]
+[ext_resource type="Texture2D" uid="uid://c23hdav7w4k3o" path="res://Assets/images/personajes/botines/Botin1.png" id="2_480uo"]
+[ext_resource type="Texture2D" uid="uid://buqofflbrx5it" path="res://Assets/images/personajes/heads/Personaje1Reverse.png" id="3_5bxsx"]
+[ext_resource type="Texture2D" uid="uid://biyrai5g7gk4" path="res://Assets/images/objetos_escena/hielo.png" id="4_74xay"]
+[ext_resource type="Texture2D" uid="uid://1mntml6d0ati" path="res://Assets/images/particulas/particula destello.png" id="5_870sw"]
+
+[sub_resource type="Animation" id="Animation_br3oq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../estrellas/estrella:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(413.75, 205)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../estrellas/estrella:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../estrellas/estrella2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(321.25, 158.75)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../estrellas/estrella2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../estrellas/estrella3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 123.75)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../estrellas/estrella3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_oash8"]
+resource_name = "aturdido"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../estrellas/estrella:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(413.75, 205), Vector2(436.25, 180), Vector2(432.5, 156.25), Vector2(412.5, 132.5), Vector2(400, 123.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../estrellas/estrella:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../estrellas/estrella2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(321.25, 158.75), Vector2(345, 193.75), Vector2(373.75, 206.25), Vector2(392.5, 211.25), Vector2(413.75, 205)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../estrellas/estrella2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../estrellas/estrella3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(400, 123.75), Vector2(382.5, 118.75), Vector2(350, 117.5), Vector2(335, 122.5), Vector2(318.75, 143.75), Vector2(321.25, 158.75)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../estrellas/estrella3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a068"]
+_data = {
+"RESET": SubResource("Animation_br3oq"),
+"aturdido": SubResource("Animation_oash8")
+}
+
+[node name="personaje_1" type="CharacterBody2D" groups=["gr_personajes"]]
+light_mask = 0
+z_index = 1
+scale = Vector2(0.8, 0.8)
+collision_layer = 2
+collision_mask = 11
+script = ExtResource("1_85vcs")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(-491.25, -280)
+
+[node name="hueso_botin" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(491.25, 311.25)
+rest = Transform2D(1, 0, 0, 1, 491.25, 311.25)
+
+[node name="botin_1" type="CharacterBody2D" parent="Skeleton2D/hueso_botin" groups=["gr_botin"]]
+collision_layer = 16
+collision_mask = 0
+
+[node name="botin" type="Polygon2D" parent="Skeleton2D/hueso_botin/botin_1"]
+position = Vector2(-62.5, -30)
+rotation = -0.116937
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_480uo")
+polygon = PackedVector2Array(3.60359, 125.225, 357.658, 84.6847, 467.568, 227.928, 768.468, 357.658, 783.784, 437.838, 643.243, 548.649, 36.036, 482.883)
+uv = PackedVector2Array(5.40541, 125.225, 355.856, 88.2883, 467.568, 227.027, 764.865, 358.559, 774.775, 440.541, 654.054, 541.441, 47.7477, 490.09)
+bones = ["hueso_botin", PackedFloat32Array(1, 1, 1, 0.5, 0.5, 0.5, 0.5)]
+
+[node name="CollisionBotin" type="CollisionPolygon2D" parent="Skeleton2D/hueso_botin/botin_1"]
+position = Vector2(-10, -2.5)
+polygon = PackedVector2Array(-32.5, 53.75, -41.25, 32.5, -37.5, 5, 37.5, 5, 71.25, 18.75, 98.75, 23.75, 110, 33.75, 102.5, 48.75, 61.25, 61.25)
+
+[node name="aturdido" type="AnimationPlayer" parent="."]
+root_node = NodePath("../head")
+libraries = {
+"": SubResource("AnimationLibrary_8a068")
+}
+speed_scale = 2.0
+
+[node name="head" type="Polygon2D" parent="."]
+position = Vector2(-135, -105)
+scale = Vector2(0.3, 0.319)
+texture = ExtResource("3_5bxsx")
+polygon = PackedVector2Array(34.5238, 515.476, 35.7143, -103.571, 780.952, -103.571, 779.762, 513.095)
+uv = PackedVector2Array(34.5238, 515.476, 35.7143, -103.571, 780.952, -103.571, 779.762, 513.095)
+
+[node name="CollisionHead" type="CollisionPolygon2D" parent="."]
+position = Vector2(-495.875, -281.25)
+polygon = PackedVector2Array(515, 321.25, 536.25, 315, 533.75, 233.75, 441.25, 233.75, 440, 273.75, 443.75, 315, 466.25, 318.75)
+
+[node name="estrellas" type="Node2D" parent="."]
+visible = false
+position = Vector2(-383.75, -262.5)
+
+[node name="estrella" type="Sprite2D" parent="estrellas"]
+position = Vector2(413.75, 205)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_3tt2c")
+
+[node name="estrella2" type="Sprite2D" parent="estrellas"]
+position = Vector2(321.25, 158.75)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_3tt2c")
+
+[node name="estrella3" type="Sprite2D" parent="estrellas"]
+position = Vector2(400, 123.75)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_3tt2c")
+
+[node name="particula_hielo" type="CPUParticles2D" parent="."]
+position = Vector2(2.125, -1.54999)
+scale = Vector2(0.7, 0.7)
+emitting = false
+amount = 15
+speed_scale = 0.5
+texture = ExtResource("5_870sw")
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, -500)
+angular_velocity_min = 27.05
+angular_velocity_max = 100.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+
+[node name="hielo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(10, -31.25)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_74xay")

@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=3 uid="uid://dlrmb16o60who"]
+
+[ext_resource type="Texture2D" uid="uid://pvkgo1d6fcy2" path="res://Assets/images/particulas/volcan/humo.png" id="2_rjilh"]
+[ext_resource type="Texture2D" uid="uid://dc7oplow0yll7" path="res://Assets/images/particulas/volcan/chispa.png" id="3_8ouxp"]
+
+[sub_resource type="Gradient" id="Gradient_pgjuy"]
+offsets = PackedFloat32Array(0, 0.139344)
+colors = PackedColorArray(0, 0, 0, 0, 0.351563, 0.351563, 0.351563, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2ue5t"]
+gradient = SubResource("Gradient_pgjuy")
+
+[sub_resource type="Curve" id="Curve_optjw"]
+max_value = 100.0
+_data = [Vector2(0.206667, 0), 0.0, 0.0, 0, 0, Vector2(1, 87.9121), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_uqg0y"]
+curve_x = SubResource("Curve_optjw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1rhas"]
+particle_flag_disable_z = true
+directional_velocity_min = 0.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_uqg0y")
+radial_velocity_min = 7.75
+radial_velocity_max = 7.75
+gravity = Vector3(0, -5, 0)
+scale_min = 0.2
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_2ue5t")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vd2wp"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_7n7wr"]
+offsets = PackedFloat32Array(0, 0.311475)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rrrm2"]
+gradient = SubResource("Gradient_7n7wr")
+
+[sub_resource type="Curve" id="Curve_f1tba"]
+max_value = 10.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.233333, 10), 0.0, 0.0, 0, 0, Vector2(0.74, 0), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_nw7tx"]
+curve_x = SubResource("Curve_f1tba")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0i7vd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(70, 5, 1)
+angle_max = 360.0
+angular_velocity_max = 50.0
+directional_velocity_min = -1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_nw7tx")
+gravity = Vector3(0, -2, 0)
+scale_min = 0.05
+scale_max = 0.07
+color_ramp = SubResource("GradientTexture1D_rrrm2")
+
+[node name="humo" type="Node2D"]
+
+[node name="humo" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.290196)
+position = Vector2(654, 54)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_1rhas")
+texture = ExtResource("2_rjilh")
+lifetime = 20.0
+
+[node name="chispas" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_vd2wp")
+position = Vector2(655, 104)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_0i7vd")
+texture = ExtResource("3_8ouxp")
+lifetime = 11.0

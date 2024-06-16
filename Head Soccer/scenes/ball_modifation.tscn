@@ -1,0 +1,821 @@
+[gd_scene load_steps=72 format=3 uid="uid://dk4chlrmli11a"]
+
+[ext_resource type="Shader" path="res://Assets/shaders/fondo_ball.gdshader" id="1_63o56"]
+[ext_resource type="Script" path="res://Assets/Scripts/ball_modifation.gd" id="1_56754"]
+[ext_resource type="Texture2D" uid="uid://b4e70sgaedlvc" path="res://Assets/images/objetos_escena/Fondo_ball.jpg" id="2_30hq5"]
+[ext_resource type="PackedScene" uid="uid://cokvpe8ebyqqa" path="res://scenes/options.tscn" id="2_80h7m"]
+[ext_resource type="PackedScene" uid="uid://bxwokruvpvm64" path="res://scenes/pelota.tscn" id="3_us8v0"]
+[ext_resource type="Texture2D" uid="uid://duaydxj4rpa2c" path="res://Assets/images/particulas/coin/coin1.png" id="5_ji7wp"]
+[ext_resource type="Texture2D" uid="uid://jcnydunyq71n" path="res://Assets/images/particulas/coin/coin2.png" id="6_bpv5r"]
+[ext_resource type="Texture2D" uid="uid://dhlq6x6fpvmnj" path="res://Assets/images/particulas/coin/coin3.png" id="7_fbqyi"]
+[ext_resource type="Texture2D" uid="uid://dtinrdd241dty" path="res://Assets/images/particulas/coin/coin4.png" id="8_xjihg"]
+[ext_resource type="Texture2D" uid="uid://dnwhnyu70q4nr" path="res://Assets/images/particulas/rayo sheet.png" id="9_2vcx0"]
+[ext_resource type="Texture2D" uid="uid://cdt6l2f7xioe6" path="res://Assets/images/particulas/coin/coin5.png" id="9_3y5a2"]
+[ext_resource type="Texture2D" uid="uid://r0nry7n2kcmp" path="res://Assets/images/particulas/coin/coin6.png" id="10_73d54"]
+[ext_resource type="Texture2D" uid="uid://dhyaew0dj1hfo" path="res://Assets/images/botones/boton_circular.png" id="13_tafe6"]
+[ext_resource type="Texture2D" uid="uid://bpfogvvqysg77" path="res://Assets/images/botones/boton_ida_vuelta.png" id="14_585pg"]
+[ext_resource type="Texture2D" uid="uid://ci3ljuk6ysfar" path="res://Assets/images/botones/btn_VFX.png" id="15_brs2d"]
+[ext_resource type="Texture2D" uid="uid://cvdher212ibdx" path="res://Assets/images/botones/btn_cruz.png" id="16_pbwu6"]
+[ext_resource type="Texture2D" uid="uid://1mntml6d0ati" path="res://Assets/images/particulas/particula destello.png" id="16_q8i8x"]
+[ext_resource type="Texture2D" uid="uid://5j3yksakofa2" path="res://Assets/images/botones/btn_tilde.png" id="17_oji6m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3tij"]
+shader = ExtResource("1_63o56")
+shader_parameter/tiled_factor = Vector2(13.275, 7.03)
+shader_parameter/aspect_ratio = 0.33
+
+[sub_resource type="Animation" id="Animation_rwltx"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line2D/pelota:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-540, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vi3f7"]
+resource_name = "voleo_circular"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line2D/pelota:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-227, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wcxg8"]
+resource_name = "voleo"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D/pelota:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-540, 0), Vector2(539, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0344q"]
+_data = {
+"RESET": SubResource("Animation_rwltx"),
+"voleo_circular": SubResource("Animation_vi3f7"),
+"voleo_horizontal": SubResource("Animation_wcxg8")
+}
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j5jve"]
+a = Vector2(550, 7.5)
+b = Vector2(-553, 8.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_57ip0"]
+a = Vector2(84, -38.5)
+b = Vector2(-82, -37.5)
+
+[sub_resource type="SystemFont" id="SystemFont_m4fe0"]
+font_names = PackedStringArray("On Fire Free Trial")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gmfge"]
+line_spacing = -9.355
+
+[sub_resource type="Gradient" id="Gradient_fbs11"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndaux"]
+gradient = SubResource("Gradient_fbs11")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_apdef"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.262932, 0.262932, 0.262932, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c73pw"]
+gradient = SubResource("Gradient_apdef")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_yohih"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_heoh3"]
+gradient = SubResource("Gradient_yohih")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_pfyjk"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.211765, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wobmj"]
+gradient = SubResource("Gradient_pfyjk")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_48v0u"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.231548, 0.734132, 0.416346, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5h5e8"]
+gradient = SubResource("Gradient_48v0u")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_dp5it"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 1, 0.729412, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b7a06"]
+gradient = SubResource("Gradient_dp5it")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_taua5"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.231373, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hlkra"]
+gradient = SubResource("Gradient_taua5")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_b1jhf"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.12549, 0.27451, 0.6, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cdpmt"]
+gradient = SubResource("Gradient_b1jhf")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_ub4tm"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.545098, 0.207843, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ibwmk"]
+gradient = SubResource("Gradient_ub4tm")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_if2nh"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 0.635294, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gjvvx"]
+gradient = SubResource("Gradient_if2nh")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_6cvqp"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hj2lj"]
+gradient = SubResource("Gradient_6cvqp")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_pnin2"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0.584314, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qppkm"]
+gradient = SubResource("Gradient_pnin2")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_5cb13"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_awtk7"]
+gradient = SubResource("Gradient_5cb13")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_os0og"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.952941, 0, 0.501961, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2kudd"]
+gradient = SubResource("Gradient_os0og")
+width = 50
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_knppf"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0.509804, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6aus6"]
+gradient = SubResource("Gradient_knppf")
+width = 50
+height = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8okd"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1jfj"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qqvh"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ej3h"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm6uf"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjrbq"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btiqn"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(3840, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0nqs"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(5760, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xauy"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(0, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8vxi"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(1920, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cju4p"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(3840, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5ww1"]
+atlas = ExtResource("9_2vcx0")
+region = Rect2(5760, 2160, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1nrk"]
+resource_name = "rayo"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8okd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1jfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qqvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ej3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm6uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjrbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btiqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0nqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xauy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8vxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cju4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5ww1")
+}],
+"loop": true,
+"name": &"rayo",
+"speed": 12.0
+}]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2pn2j"]
+frames = 6
+frame_0/texture = ExtResource("5_ji7wp")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("6_bpv5r")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("7_fbqyi")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("8_xjihg")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("9_3y5a2")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("10_73d54")
+frame_5/duration = 0.2
+
+[node name="ball_modifation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_56754")
+
+[node name="options" parent="." instance=ExtResource("2_80h7m")]
+visible = false
+layout_mode = 1
+
+[node name="fondo" type="TextureRect" parent="."]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(1, 0, 1, 1)
+material = SubResource("ShaderMaterial_u3tij")
+layout_mode = 0
+offset_left = -22.0
+offset_top = -15.0
+offset_right = 1305.0
+offset_bottom = 743.0
+texture = ExtResource("2_30hq5")
+metadata/_edit_lock_ = true
+
+[node name="animacion" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0344q")
+}
+autoplay = "voleo_circular"
+speed_scale = 0.7
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(579, 51)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(62, 50.5)
+shape = SubResource("SegmentShape2D_j5jve")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -492.0
+offset_top = -51.0
+offset_right = 614.0
+offset_bottom = 59.0
+grow_horizontal = 2
+pivot_offset = Vector2(221, 0)
+color = Color(0.313726, 0.313726, 0.313726, 0.690196)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(637, 674)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(3, 4.5)
+shape = SubResource("SegmentShape2D_57ip0")
+
+[node name="btn_back" type="Button" parent="StaticBody2D2"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -34.0
+offset_right = 88.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_m4fe0")
+theme_override_font_sizes/font_size = 64
+text = "BACK
+"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(640, 380)
+points = PackedVector2Array(0, 0, -210, 0)
+default_color = Color(1, 1, 1, 0)
+
+[node name="pelota" parent="Line2D" instance=ExtResource("3_us8v0")]
+position = Vector2(-540, 0)
+sleeping = true
+freeze = true
+
+[node name="labels2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="labels2"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = -4.0
+offset_right = 102.0
+offset_bottom = 103.0
+text = "C
+O
+L
+O
+R
+
+1"
+label_settings = SubResource("LabelSettings_gmfge")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Line2D2" type="Line2D" parent="labels2"]
+position = Vector2(469, 0.0566038)
+scale = Vector2(1, 1.0566)
+points = PackedVector2Array(100, 1, 100, 103)
+width = 2.0
+
+[node name="Label2" type="Label" parent="labels2"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = -4.0
+offset_right = 561.0
+offset_bottom = 103.0
+text = "C
+O
+L
+O
+R
+
+2"
+label_settings = SubResource("LabelSettings_gmfge")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Line2D3" type="Line2D" parent="labels2"]
+position = Vector2(10, 0.0566038)
+scale = Vector2(1, 1.0566)
+points = PackedVector2Array(100, 1, 100, 103)
+width = 2.0
+
+[node name="Line2D4" type="Line2D" parent="labels2"]
+position = Vector2(927, 0.0566039)
+scale = Vector2(1, 1.0566)
+points = PackedVector2Array(100, 1, 100, 103)
+width = 2.0
+
+[node name="Label3" type="Label" parent="labels2"]
+layout_mode = 0
+offset_left = 1006.0
+offset_top = -4.0
+offset_right = 1019.0
+offset_bottom = 103.0
+text = "V
+F
+X"
+label_settings = SubResource("LabelSettings_gmfge")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="btn_VFX" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 1139.0
+offset_top = 111.0
+offset_right = 1189.0
+offset_bottom = 161.0
+texture_normal = ExtResource("15_brs2d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 68.0
+offset_bottom = 107.0
+
+[node name="btn_circular" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_tafe6")
+
+[node name="btn_ida_vuelta" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("14_585pg")
+
+[node name="colores1" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 3.0
+offset_right = 542.0
+offset_bottom = 53.0
+metadata/_edit_group_ = true
+
+[node name="negro1" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_ndaux")
+
+[node name="gris1" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_c73pw")
+
+[node name="blanco1" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_heoh3")
+
+[node name="verde1" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_wobmj")
+
+[node name="verdoso1" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_5h5e8")
+
+[node name="verdecito1" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_b7a06")
+
+[node name="celeste1" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_hlkra")
+
+[node name="azul" type="TextureButton" parent="colores1"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_cdpmt")
+
+[node name="colores2" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 57.0
+offset_right = 488.0
+offset_bottom = 107.0
+metadata/_edit_group_ = true
+
+[node name="violeta1" type="TextureButton" parent="colores2"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_ibwmk")
+
+[node name="amarillo_pato1" type="TextureButton" parent="colores2"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gjvvx")
+
+[node name="amarillo1" type="TextureButton" parent="colores2"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_hj2lj")
+
+[node name="naranja1" type="TextureButton" parent="colores2"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_qppkm")
+
+[node name="rojo1" type="TextureButton" parent="colores2"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_awtk7")
+
+[node name="magenta1" type="TextureButton" parent="colores2"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_2kudd")
+
+[node name="rosa1" type="TextureButton" parent="colores2"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_6aus6")
+
+[node name="colores3" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 3.0
+offset_right = 1001.0
+offset_bottom = 53.0
+metadata/_edit_group_ = true
+
+[node name="negro2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_ndaux")
+
+[node name="gris2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_c73pw")
+
+[node name="blanco2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_heoh3")
+
+[node name="verde2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_wobmj")
+
+[node name="verdoso2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_5h5e8")
+
+[node name="verdecito2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_b7a06")
+
+[node name="celeste2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_hlkra")
+
+[node name="azul2" type="TextureButton" parent="colores3"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_cdpmt")
+
+[node name="colores4" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 57.0
+offset_right = 947.0
+offset_bottom = 107.0
+metadata/_edit_group_ = true
+
+[node name="violeta2" type="TextureButton" parent="colores4"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_ibwmk")
+
+[node name="amarillo_pato2" type="TextureButton" parent="colores4"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gjvvx")
+
+[node name="amarillo2" type="TextureButton" parent="colores4"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_hj2lj")
+
+[node name="naranja2" type="TextureButton" parent="colores4"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_qppkm")
+
+[node name="rojo2" type="TextureButton" parent="colores4"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_awtk7")
+
+[node name="magenta2" type="TextureButton" parent="colores4"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_2kudd")
+
+[node name="rosa2" type="TextureButton" parent="colores4"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_6aus6")
+
+[node name="VFX" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 40.0
+
+[node name="estela" type="TextureButton" parent="VFX"]
+layout_mode = 2
+offset_left = 1021.0
+offset_top = 3.0
+offset_right = 1071.0
+offset_bottom = 53.0
+size_flags_horizontal = 4
+disabled = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Estela1" type="AnimatedSprite2D" parent="VFX/estela"]
+position = Vector2(25, 25)
+scale = Vector2(0.0269791, 0.03)
+sprite_frames = SubResource("SpriteFrames_w1nrk")
+animation = &"rayo"
+autoplay = "rayo"
+
+[node name="VFX2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 40.0
+
+[node name="coin" type="TextureButton" parent="VFX2"]
+layout_mode = 0
+offset_left = 1021.0
+offset_top = 57.0
+offset_right = 1071.0
+offset_bottom = 107.0
+disabled = true
+texture_normal = SubResource("AnimatedTexture_2pn2j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="hielo" type="TextureButton" parent="VFX2"]
+layout_mode = 0
+offset_left = 1075.0
+offset_top = 57.0
+offset_right = 1125.0
+offset_bottom = 107.0
+disabled = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="particula_hielo" type="CPUParticles2D" parent="VFX2/hielo"]
+position = Vector2(25, 25)
+scale = Vector2(0.4, 0.4)
+amount = 50
+speed_scale = 0.5
+texture = ExtResource("16_q8i8x")
+emission_shape = 1
+emission_sphere_radius = 64.0
+gravity = Vector2(0, 20)
+angular_velocity_min = 27.05
+angular_velocity_max = 100.0
+scale_amount_min = 0.01
+scale_amount_max = 0.04
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1212.0
+offset_top = 3.0
+offset_right = 1262.0
+offset_bottom = 107.0
+
+[node name="btn_activar" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("17_oji6m")
+
+[node name="btn_desactivar" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("16_pbwu6")
+
+[connection signal="button_up" from="StaticBody2D2/btn_back" to="." method="_on_btn_back_button_up"]
+[connection signal="button_down" from="btn_VFX" to="." method="_on_btn_vfx_button_down"]
+[connection signal="button_down" from="VBoxContainer/btn_circular" to="." method="_on_btn_circular_button_down"]
+[connection signal="button_down" from="VBoxContainer/btn_ida_vuelta" to="." method="_on_btn_ida_vuelta_button_down"]
+[connection signal="button_down" from="colores1/negro1" to="." method="_on_negro_1_button_down"]
+[connection signal="button_down" from="colores1/gris1" to="." method="_on_gris_1_button_down"]
+[connection signal="button_down" from="colores1/blanco1" to="." method="_on_blanco_1_button_down"]
+[connection signal="button_down" from="colores1/verde1" to="." method="_on_verde_1_button_down"]
+[connection signal="button_down" from="colores1/verdoso1" to="." method="_on_verdoso_1_button_down"]
+[connection signal="button_down" from="colores1/verdecito1" to="." method="_on_verdecito_1_button_down"]
+[connection signal="button_down" from="colores1/celeste1" to="." method="_on_celeste_1_button_down"]
+[connection signal="button_down" from="colores1/azul" to="." method="_on_azul_button_down"]
+[connection signal="button_down" from="colores2/violeta1" to="." method="_on_violeta_1_button_down"]
+[connection signal="button_down" from="colores2/amarillo_pato1" to="." method="_on_amarillo_pato_1_button_down"]
+[connection signal="button_down" from="colores2/amarillo1" to="." method="_on_amarillo_1_button_down"]
+[connection signal="button_down" from="colores2/naranja1" to="." method="_on_naranja_1_button_down"]
+[connection signal="button_down" from="colores2/rojo1" to="." method="_on_rojo_1_button_down"]
+[connection signal="button_down" from="colores2/magenta1" to="." method="_on_magenta_1_button_down"]
+[connection signal="button_down" from="colores2/rosa1" to="." method="_on_rosa_1_button_down"]
+[connection signal="button_down" from="colores3/negro2" to="." method="_on_negro_2_button_down"]
+[connection signal="button_down" from="colores3/gris2" to="." method="_on_gris_2_button_down"]
+[connection signal="button_down" from="colores3/blanco2" to="." method="_on_blanco_2_button_down"]
+[connection signal="button_down" from="colores3/verde2" to="." method="_on_verde_2_button_down"]
+[connection signal="button_down" from="colores3/verdoso2" to="." method="_on_verdoso_2_button_down"]
+[connection signal="button_down" from="colores3/verdecito2" to="." method="_on_verdecito_2_button_down"]
+[connection signal="button_down" from="colores3/celeste2" to="." method="_on_celeste_2_button_down"]
+[connection signal="button_down" from="colores3/azul2" to="." method="_on_azul_2_button_down"]
+[connection signal="button_down" from="colores4/violeta2" to="." method="_on_violeta_2_button_down"]
+[connection signal="button_down" from="colores4/amarillo_pato2" to="." method="_on_amarillo_pato_2_button_down"]
+[connection signal="button_down" from="colores4/amarillo2" to="." method="_on_amarillo_2_button_down"]
+[connection signal="button_down" from="colores4/naranja2" to="." method="_on_naranja_2_button_down"]
+[connection signal="button_down" from="colores4/rojo2" to="." method="_on_rojo_2_button_down"]
+[connection signal="button_down" from="colores4/magenta2" to="." method="_on_magenta_2_button_down"]
+[connection signal="button_down" from="colores4/rosa2" to="." method="_on_rosa_2_button_down"]
+[connection signal="button_down" from="VFX/estela" to="." method="_on_estela_button_down"]
+[connection signal="button_down" from="VFX2/coin" to="." method="_on_coin_button_down"]
+[connection signal="button_down" from="VFX2/hielo" to="." method="_on_hielo_button_down"]
+[connection signal="button_down" from="VBoxContainer2/btn_activar" to="." method="_on_btn_activar_button_down"]
+[connection signal="button_down" from="VBoxContainer2/btn_desactivar" to="." method="_on_btn_desactivar_button_down"]

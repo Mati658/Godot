@@ -1,0 +1,1371 @@
+[gd_scene load_steps=86 format=3 uid="uid://c8327cbaqqwke"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/tienda.gd" id="1_8abvf"]
+[ext_resource type="Texture2D" uid="uid://d4bos338ajgve" path="res://Assets/images/objetos_escena/fondo_selector.png" id="1_0884k"]
+[ext_resource type="Texture2D" uid="uid://vm08ahkihual" path="res://Assets/images/objetos_escena/coin.png" id="3_irshy"]
+[ext_resource type="Script" path="res://Assets/Scripts/botines.gd" id="4_f53x3"]
+[ext_resource type="Texture2D" uid="uid://s5hf2a22jj5e" path="res://Assets/images/objetos_escena/aro.png" id="4_pddbm"]
+[ext_resource type="Texture2D" uid="uid://de6hgcn50pitj" path="res://Assets/images/objetos_escena/aro_pressed.png" id="7_3tcgq"]
+[ext_resource type="PackedScene" uid="uid://cokvpe8ebyqqa" path="res://scenes/options.tscn" id="7_noa4u"]
+[ext_resource type="Texture2D" uid="uid://f1gr336smlle" path="res://Assets/images/objetos_escena/marco.png" id="8_o0kds"]
+[ext_resource type="Script" path="res://Assets/Scripts/btn_botin.gd" id="8_ojslw"]
+[ext_resource type="Texture2D" uid="uid://ccgemschbc47u" path="res://Assets/images/botones/flechaAtras.png" id="9_clxfs"]
+[ext_resource type="Texture2D" uid="uid://brkqi26n5k0as" path="res://Assets/images/personajes/botines/Botin3.png" id="11_asohf"]
+[ext_resource type="Texture2D" uid="uid://csiddqrrl3f5u" path="res://Assets/images/personajes/botines/Botin4.png" id="12_e0smk"]
+[ext_resource type="Texture2D" uid="uid://ci76w1d1ua4h1" path="res://Assets/images/personajes/botines/Botin5.png" id="13_m7jku"]
+[ext_resource type="Script" path="res://Assets/Scripts/botines_dict.gd" id="13_ojp6k"]
+[ext_resource type="Texture2D" uid="uid://b1w51n1jcxd83" path="res://Assets/images/personajes/botines/Botin6.png" id="14_8m7qc"]
+[ext_resource type="Texture2D" uid="uid://chu1ah0mjiydd" path="res://Assets/images/personajes/botines/Botin7.png" id="15_qsi7x"]
+[ext_resource type="Script" path="res://Assets/Scripts/botones_selector.gd" id="16_7w078"]
+[ext_resource type="Texture2D" uid="uid://dafopyrmvk06h" path="res://Assets/images/personajes/botines/Botin8.png" id="16_g8o3p"]
+[ext_resource type="Texture2D" uid="uid://ckatecpjsun68" path="res://Assets/images/botones/Boton sin presionar.png" id="16_id2bo"]
+[ext_resource type="Texture2D" uid="uid://d32o4m3ngnx8b" path="res://Assets/images/botones/Boton presionado.png" id="17_3obrr"]
+[ext_resource type="Texture2D" uid="uid://cm5qm5kdmasjc" path="res://Assets/images/personajes/heads/Personaje3Reverse.png" id="17_7wrt4"]
+[ext_resource type="Texture2D" uid="uid://bal4v2vshdhk5" path="res://Assets/images/personajes/botines/Botin9.png" id="17_thlcg"]
+[ext_resource type="Texture2D" uid="uid://dpfp2cr2vv607" path="res://Assets/images/personajes/botines/Botin10.png" id="18_byj0c"]
+[ext_resource type="Texture2D" uid="uid://btaw3nri3rk5h" path="res://Assets/images/personajes/heads/Personaje4Reverse.png" id="18_j41ra"]
+[ext_resource type="Script" path="res://Assets/Scripts/btn_selector.gd" id="18_jq6dd"]
+[ext_resource type="Texture2D" uid="uid://dcqx2tqmgstm8" path="res://Assets/images/pelotas/Pelota2.png" id="19_l5vm1"]
+[ext_resource type="Texture2D" uid="uid://b3w6elpc1t1fi" path="res://Assets/images/personajes/heads/Personaje5Reverse.png" id="19_sl0il"]
+[ext_resource type="Texture2D" uid="uid://loflalrla5j6" path="res://Assets/images/pelotas/Pelota3.png" id="20_5xjl3"]
+[ext_resource type="Texture2D" uid="uid://dncnp3gjuh5ko" path="res://Assets/images/pelotas/Pelota4.png" id="21_0uhlf"]
+[ext_resource type="Texture2D" uid="uid://27kqassaat2w" path="res://Assets/images/pelotas/Pelota5.png" id="22_fgkdj"]
+[ext_resource type="Texture2D" uid="uid://ctj43tjc6prpn" path="res://Assets/images/pelotas/Pelota6.png" id="23_wjw58"]
+[ext_resource type="Texture2D" uid="uid://cil8v6ugb3fvf" path="res://Assets/images/pelotas/Pelota7.png" id="24_66cs4"]
+[ext_resource type="Texture2D" uid="uid://j1ydaetlqdjp" path="res://Assets/images/pelotas/Pelota8.png" id="25_avsos"]
+[ext_resource type="Texture2D" uid="uid://k2cn8vxtjutu" path="res://Assets/images/pelotas/Pelota9.png" id="26_k68d8"]
+[ext_resource type="Texture2D" uid="uid://c1347co5253gl" path="res://Assets/images/pelotas/Pelota10.png" id="27_xkoue"]
+[ext_resource type="Texture2D" uid="uid://cpwbhx6s48n6" path="res://Assets/images/poderes/Poder aturdir (enemigo-propio).png" id="28_uu30j"]
+[ext_resource type="Texture2D" uid="uid://dtu3yskn48kvx" path="res://Assets/images/poderes/Poder congelar contrario.png" id="29_0yrk4"]
+[ext_resource type="Texture2D" uid="uid://737e7y0fwyqi" path="res://Assets/images/poderes/Poder teledirigido.png" id="30_86ujh"]
+[ext_resource type="Texture2D" uid="uid://1ctl3d177ya0" path="res://Assets/images/poderes/Poder velocidad.png" id="31_m1j47"]
+[ext_resource type="Texture2D" uid="uid://duaydxj4rpa2c" path="res://Assets/images/particulas/coin/coin1.png" id="32_7prhq"]
+[ext_resource type="Texture2D" uid="uid://c337jhc6q8ksg" path="res://Assets/images/botones/btn_particulas.png" id="32_8ulk4"]
+[ext_resource type="Texture2D" uid="uid://b33o7ddac578q" path="res://Assets/images/botones/Fondo_btn.png" id="32_e46g7"]
+[ext_resource type="Texture2D" uid="uid://bhgo74agujbxt" path="res://Assets/images/botones/Btn comprado.png" id="33_55evf"]
+[ext_resource type="Texture2D" uid="uid://b2rncfj0yrly8" path="res://Assets/images/botones/btn_particulas2.png" id="33_f05c5"]
+[ext_resource type="Texture2D" uid="uid://jcnydunyq71n" path="res://Assets/images/particulas/coin/coin2.png" id="33_ujq3m"]
+[ext_resource type="Texture2D" uid="uid://d24645ppynces" path="res://Assets/images/botones/btn_estelas.png" id="34_52oq6"]
+[ext_resource type="Texture2D" uid="uid://dhlq6x6fpvmnj" path="res://Assets/images/particulas/coin/coin3.png" id="34_nknaj"]
+[ext_resource type="Texture2D" uid="uid://bqul5y8nvns48" path="res://Assets/images/botones/btn_estelas2.png" id="35_4a56u"]
+[ext_resource type="Texture2D" uid="uid://dtinrdd241dty" path="res://Assets/images/particulas/coin/coin4.png" id="35_xk2a5"]
+[ext_resource type="Texture2D" uid="uid://cdt6l2f7xioe6" path="res://Assets/images/particulas/coin/coin5.png" id="36_xe5aj"]
+[ext_resource type="Texture2D" uid="uid://r0nry7n2kcmp" path="res://Assets/images/particulas/coin/coin6.png" id="37_jbqjq"]
+[ext_resource type="Texture2D" uid="uid://dnwhnyu70q4nr" path="res://Assets/images/particulas/rayo sheet.png" id="38_agreu"]
+[ext_resource type="Texture2D" uid="uid://1mntml6d0ati" path="res://Assets/images/particulas/particula destello.png" id="38_v45ry"]
+[ext_resource type="Texture2D" uid="uid://buqws4cjfsf4g" path="res://Assets/images/canchas/cancha_2.png" id="39_bqj70"]
+[ext_resource type="Texture2D" uid="uid://pubhsgctttkj" path="res://Assets/images/obstaculos/obstaculo2.png" id="40_10um5"]
+[ext_resource type="Texture2D" uid="uid://j6yst5e54o30" path="res://Assets/images/canchas/cancha_3.png" id="40_aj4xf"]
+[ext_resource type="Texture2D" uid="uid://cfbsn8qy3v81g" path="res://Assets/images/canchas/cancha_4.png" id="41_rrfxe"]
+[ext_resource type="Texture2D" uid="uid://hq23fr2iune8" path="res://Assets/images/obstaculos/obstaculo3.png" id="41_vh35y"]
+[ext_resource type="Texture2D" uid="uid://xs3titco7sag" path="res://Assets/images/canchas/cancha_5.png" id="43_vfwkm"]
+[ext_resource type="Texture2D" uid="uid://c7uor3k2sh41k" path="res://Assets/images/canchas/cancha_6.png" id="44_3slgs"]
+[ext_resource type="Texture2D" uid="uid://cdlk52nwl85ut" path="res://Assets/images/canchas/cancha_7.png" id="45_qw8pf"]
+[ext_resource type="Texture2D" uid="uid://b6j486pojn3ju" path="res://Assets/images/botones/btn_obstaculos.png" id="52_5lgch"]
+[ext_resource type="Texture2D" uid="uid://bfywhy66p0oa2" path="res://Assets/images/botones/btn_obstaculos2.png" id="53_hidoq"]
+[ext_resource type="AudioStream" uid="uid://jppqa3eyepu6" path="res://Assets/Audio/Sonidos/boton.mp3" id="64_1xbau"]
+[ext_resource type="AudioStream" uid="uid://umkd7d0dmm43" path="res://Assets/Audio/Sonidos/Comprado.mp3" id="65_1uxe3"]
+
+[sub_resource type="SystemFont" id="SystemFont_gtw3w"]
+font_names = PackedStringArray("Upheaval TT (BRK)")
+
+[sub_resource type="LabelSettings" id="LabelSettings_agcdi"]
+font = SubResource("SystemFont_gtw3w")
+font_size = 75
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_m1hui"]
+frames = 6
+frame_0/texture = ExtResource("32_7prhq")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("33_ujq3m")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("34_nknaj")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("35_xk2a5")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("36_xe5aj")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("37_jbqjq")
+frame_5/duration = 0.2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8okd"]
+atlas = ExtResource("38_agreu")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1jfj"]
+atlas = ExtResource("38_agreu")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qqvh"]
+atlas = ExtResource("38_agreu")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ej3h"]
+atlas = ExtResource("38_agreu")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm6uf"]
+atlas = ExtResource("38_agreu")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjrbq"]
+atlas = ExtResource("38_agreu")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btiqn"]
+atlas = ExtResource("38_agreu")
+region = Rect2(3840, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0nqs"]
+atlas = ExtResource("38_agreu")
+region = Rect2(5760, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xauy"]
+atlas = ExtResource("38_agreu")
+region = Rect2(0, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8vxi"]
+atlas = ExtResource("38_agreu")
+region = Rect2(1920, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cju4p"]
+atlas = ExtResource("38_agreu")
+region = Rect2(3840, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5ww1"]
+atlas = ExtResource("38_agreu")
+region = Rect2(5760, 2160, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tshdp"]
+resource_name = "rayo"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8okd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1jfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qqvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ej3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm6uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjrbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btiqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0nqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xauy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8vxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cju4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5ww1")
+}],
+"loop": true,
+"name": &"rayo",
+"speed": 12.0
+}]
+
+[sub_resource type="SystemFont" id="SystemFont_twdbx"]
+font_names = PackedStringArray("Upheaval TT (BRK)")
+
+[sub_resource type="LabelSettings" id="LabelSettings_he4d0"]
+font = SubResource("SystemFont_twdbx")
+font_size = 76
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_fkae2"]
+font_names = PackedStringArray("Upheaval TT (BRK)")
+
+[sub_resource type="SystemFont" id="SystemFont_8dt2x"]
+font_names = PackedStringArray("Upheaval TT (BRK)")
+
+[node name="tienda" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8abvf")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0884k")
+
+[node name="HScrollBar" type="HScrollBar" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.737
+anchor_right = 0.5
+anchor_bottom = 0.737
+offset_left = -615.0
+offset_top = -14.64
+offset_right = 615.0
+offset_bottom = -6.64001
+grow_horizontal = 2
+grow_vertical = 2
+allow_greater = true
+allow_lesser = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1228, 70)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_irshy")
+
+[node name="Label_coins" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617
+anchor_top = 0.329
+anchor_right = 0.617
+anchor_bottom = 0.329
+offset_left = 281.24
+offset_top = -208.88
+offset_right = 390.24
+offset_bottom = -136.88
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_agcdi")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="botines_dict" type="Node" parent="."]
+script = ExtResource("13_ojp6k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -180.0
+offset_right = 640.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="botines" type="Node2D" parent="RichTextLabel"]
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/botines"]
+position = Vector2(-359, -10)
+
+[node name="Botin3" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(515, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_asohf")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin3"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Botin4" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(804, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_e0smk")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin4"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Botin5" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(1093, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_m7jku")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin5"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Botin6" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(1382, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_8m7qc")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin6"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Botin7" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(1671, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15_qsi7x")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin7"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Botin8" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(1960, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("16_g8o3p")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin8"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Botin9" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(2249, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17_thlcg")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin9"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Botin10" type="Sprite2D" parent="RichTextLabel/botines/CanvasGroup"]
+position = Vector2(2538, 142)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("18_byj0c")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/botines/CanvasGroup/Botin10"]
+offset_left = -520.0
+offset_top = -472.0
+offset_right = 524.0
+offset_bottom = 512.0
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="heads" type="Node2D" parent="RichTextLabel"]
+visible = false
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/heads"]
+position = Vector2(-359, -10)
+
+[node name="Head3" type="Sprite2D" parent="RichTextLabel/heads/CanvasGroup"]
+position = Vector2(502, 155)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("17_7wrt4")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/heads/CanvasGroup/Head3"]
+offset_left = -334.0
+offset_top = -374.0
+offset_right = 731.0
+offset_bottom = 630.0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Head4" type="Sprite2D" parent="RichTextLabel/heads/CanvasGroup"]
+position = Vector2(791, 155)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("18_j41ra")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/heads/CanvasGroup/Head4"]
+offset_left = -334.0
+offset_top = -374.0
+offset_right = 731.0
+offset_bottom = 630.0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Head5" type="Sprite2D" parent="RichTextLabel/heads/CanvasGroup"]
+position = Vector2(1080, 155)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("19_sl0il")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/heads/CanvasGroup/Head5"]
+offset_left = -334.0
+offset_top = -374.0
+offset_right = 731.0
+offset_bottom = 630.0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="pelotas" type="Node2D" parent="RichTextLabel"]
+visible = false
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/pelotas"]
+position = Vector2(-359, -10)
+
+[node name="Pelota2" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(511, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("19_l5vm1")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota2"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota3" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(800, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("20_5xjl3")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota3"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota4" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(1089, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("21_0uhlf")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota4"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota5" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(1378, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("22_fgkdj")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota5"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota6" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(1667, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("23_wjw58")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota6"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota7" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(1956, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("24_66cs4")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota7"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota8" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(2245, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("25_avsos")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota8"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota9" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(2534, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("26_k68d8")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota9"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Pelota10" type="Sprite2D" parent="RichTextLabel/pelotas/CanvasGroup"]
+position = Vector2(2823, 147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("27_xkoue")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/pelotas/CanvasGroup/Pelota10"]
+offset_left = -857.333
+offset_top = -819.333
+offset_right = 185.667
+offset_bottom = 145.667
+scale = Vector2(1.7, 1.7)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="poderes" type="Node2D" parent="RichTextLabel"]
+visible = false
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/poderes"]
+
+[node name="Poder3" type="Sprite2D" parent="RichTextLabel/poderes/CanvasGroup"]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(159, 134)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_uu30j")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/poderes/CanvasGroup/Poder3"]
+offset_left = -340.0
+offset_top = -300.0
+offset_right = 687.0
+offset_bottom = 646.0
+scale = Vector2(0.65, 0.65)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Poder4" type="Sprite2D" parent="RichTextLabel/poderes/CanvasGroup"]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(440, 141)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_0yrk4")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/poderes/CanvasGroup/Poder4"]
+offset_left = -320.0
+offset_top = -317.5
+offset_right = 707.0
+offset_bottom = 628.5
+scale = Vector2(0.65, 0.65)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Poder5" type="Sprite2D" parent="RichTextLabel/poderes/CanvasGroup"]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(732, 135)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("30_86ujh")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/poderes/CanvasGroup/Poder5"]
+offset_left = -327.5
+offset_top = -302.5
+offset_right = 699.5
+offset_bottom = 643.5
+scale = Vector2(0.65, 0.65)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Poder6" type="Sprite2D" parent="RichTextLabel/poderes/CanvasGroup"]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(1022, 138)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("31_m1j47")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/poderes/CanvasGroup/Poder6"]
+offset_left = -330.0
+offset_top = -310.0
+offset_right = 697.0
+offset_bottom = 636.0
+scale = Vector2(0.65, 0.65)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="particulas" type="Node2D" parent="RichTextLabel"]
+visible = false
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/particulas"]
+
+[node name="Particula1" type="CPUParticles2D" parent="RichTextLabel/particulas/CanvasGroup"]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(159, 134)
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AnimatedTexture_m1hui")
+emission_shape = 1
+emission_sphere_radius = 30.0
+angular_velocity_max = 720.0
+radial_accel_min = 50.0
+radial_accel_max = 100.0
+scale_amount_min = 0.05
+scale_amount_max = 0.05
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/particulas/CanvasGroup/Particula1"]
+offset_left = -340.0
+offset_top = -300.0
+offset_right = 687.0
+offset_bottom = 646.0
+scale = Vector2(0.65, 0.65)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Particula2" type="CPUParticles2D" parent="RichTextLabel/particulas/CanvasGroup"]
+position = Vector2(448, 134)
+scale = Vector2(0.7, 0.7)
+amount = 50
+speed_scale = 0.5
+texture = ExtResource("38_v45ry")
+emission_shape = 1
+emission_sphere_radius = 64.0
+gravity = Vector2(0, 20)
+angular_velocity_min = 27.05
+angular_velocity_max = 100.0
+scale_amount_min = 0.01
+scale_amount_max = 0.04
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/particulas/CanvasGroup/Particula2"]
+offset_left = -207.0
+offset_top = -171.0
+offset_right = 893.0
+offset_bottom = 777.0
+scale = Vector2(0.37, 0.37)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="estelas" type="Node2D" parent="RichTextLabel"]
+visible = false
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/estelas"]
+
+[node name="Estela1" type="AnimatedSprite2D" parent="RichTextLabel/estelas/CanvasGroup"]
+position = Vector2(159, 134)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_tshdp")
+animation = &"rayo"
+autoplay = "rayo"
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/estelas/CanvasGroup/Estela1"]
+offset_left = -1440.0
+offset_top = -1200.0
+offset_right = -896.0
+offset_bottom = -727.0
+scale = Vector2(5.2, 5.2)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="mapas" type="Node2D" parent="RichTextLabel"]
+visible = false
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/mapas"]
+
+[node name="Mapa2" type="Sprite2D" parent="RichTextLabel/mapas/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(155, 139)
+scale = Vector2(0.21875, 0.218056)
+texture = ExtResource("39_bqj70")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/mapas/CanvasGroup/Mapa2"]
+offset_left = -631.0
+offset_top = -573.0
+offset_right = -76.0
+offset_bottom = -82.0
+scale = Vector2(2.3, 2.3)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Mapa3" type="Sprite2D" parent="RichTextLabel/mapas/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(444, 139)
+scale = Vector2(0.21875, 0.218056)
+texture = ExtResource("40_aj4xf")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/mapas/CanvasGroup/Mapa3"]
+offset_left = -631.0
+offset_top = -573.0
+offset_right = -76.0
+offset_bottom = -82.0
+scale = Vector2(2.3, 2.3)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Mapa4" type="Sprite2D" parent="RichTextLabel/mapas/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(733, 139)
+scale = Vector2(0.21875, 0.218056)
+texture = ExtResource("41_rrfxe")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/mapas/CanvasGroup/Mapa4"]
+offset_left = -631.0
+offset_top = -573.0
+offset_right = -76.0
+offset_bottom = -82.0
+scale = Vector2(2.3, 2.3)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Mapa5" type="Sprite2D" parent="RichTextLabel/mapas/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(1022, 139)
+scale = Vector2(0.21875, 0.218056)
+texture = ExtResource("43_vfwkm")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/mapas/CanvasGroup/Mapa5"]
+offset_left = -631.0
+offset_top = -573.0
+offset_right = -76.0
+offset_bottom = -82.0
+scale = Vector2(2.3, 2.3)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Mapa6" type="Sprite2D" parent="RichTextLabel/mapas/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(1311, 139)
+scale = Vector2(0.21875, 0.218056)
+texture = ExtResource("44_3slgs")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/mapas/CanvasGroup/Mapa6"]
+offset_left = -631.0
+offset_top = -573.0
+offset_right = -76.0
+offset_bottom = -82.0
+scale = Vector2(2.3, 2.3)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Mapa7" type="Sprite2D" parent="RichTextLabel/mapas/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(1600, 139)
+scale = Vector2(0.21875, 0.218056)
+texture = ExtResource("45_qw8pf")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/mapas/CanvasGroup/Mapa7"]
+offset_left = -631.0
+offset_top = -573.0
+offset_right = -76.0
+offset_bottom = -82.0
+scale = Vector2(2.3, 2.3)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="obstaculos" type="Node2D" parent="RichTextLabel"]
+visible = false
+script = ExtResource("4_f53x3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="RichTextLabel/obstaculos"]
+
+[node name="Obstaculo2" type="Sprite2D" parent="RichTextLabel/obstaculos/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(155, 139)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("40_10um5")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/obstaculos/CanvasGroup/Obstaculo2"]
+offset_left = -933.333
+offset_top = -833.333
+offset_right = -394.333
+offset_bottom = -364.333
+scale = Vector2(3.5, 3.5)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="Obstaculo3" type="Sprite2D" parent="RichTextLabel/obstaculos/CanvasGroup"]
+y_sort_enabled = true
+position = Vector2(444, 139)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("41_vh35y")
+
+[node name="btn_botin" type="TextureButton" parent="RichTextLabel/obstaculos/CanvasGroup/Obstaculo3"]
+offset_left = -933.333
+offset_top = -833.333
+offset_right = -394.333
+offset_bottom = -364.333
+scale = Vector2(3.5, 3.5)
+toggle_mode = true
+texture_normal = ExtResource("4_pddbm")
+texture_pressed = ExtResource("7_3tcgq")
+stretch_mode = 6
+script = ExtResource("8_ojslw")
+
+[node name="options" parent="." instance=ExtResource("7_noa4u")]
+visible = false
+layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_right = 113.0
+offset_bottom = 72.0
+grow_horizontal = 2
+text = "STORE"
+label_settings = SubResource("LabelSettings_he4d0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="Label"]
+position = Vector2(-60, 88)
+scale = Vector2(10.1781, 1.26234)
+points = PackedVector2Array(0.177582, -1.48533, 32.4976, -1.48533)
+width = 8.0
+default_color = Color(0, 0, 0, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="info" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 96.0
+offset_right = 980.0
+offset_bottom = 172.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_fkae2")
+theme_override_font_sizes/normal_font_size = 25
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Marco" type="Sprite2D" parent="."]
+position = Vector2(640, 95.625)
+scale = Vector2(0.984313, 0.666947)
+texture = ExtResource("8_o0kds")
+
+[node name="btn_atras" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 111.0
+offset_bottom = 107.0
+texture_normal = ExtResource("9_clxfs")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="botones" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_7w078")
+
+[node name="btn_comprar" type="Button" parent="botones"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -490.0
+offset_top = -39.0001
+offset_right = 1998.0
+offset_bottom = 993.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(1118, 578)
+theme_override_fonts/font = SubResource("SystemFont_8dt2x")
+theme_override_font_sizes/font_size = 531
+disabled = true
+icon = ExtResource("33_55evf")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="botones/btn_comprar"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2488.0
+offset_bottom = 1028.0
+texture = ExtResource("32_e46g7")
+expand_mode = 1
+
+[node name="botines" type="TextureButton" parent="botones"]
+layout_mode = 0
+offset_left = 56.25
+offset_top = 456.75
+offset_right = 575.25
+offset_bottom = 715.75
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("16_id2bo")
+texture_pressed = ExtResource("17_3obrr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="heads" type="TextureButton" parent="botones"]
+layout_mode = 0
+offset_left = 296.25
+offset_top = 456.75
+offset_right = 815.25
+offset_bottom = 715.75
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("16_id2bo")
+texture_pressed = ExtResource("17_3obrr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="pelotas" type="TextureButton" parent="botones"]
+layout_mode = 0
+offset_left = 536.25
+offset_top = 456.75
+offset_right = 1055.25
+offset_bottom = 715.75
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("16_id2bo")
+texture_pressed = ExtResource("17_3obrr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="poderes" type="TextureButton" parent="botones"]
+layout_mode = 0
+offset_left = 776.25
+offset_top = 456.75
+offset_right = 1295.25
+offset_bottom = 715.75
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("16_id2bo")
+texture_pressed = ExtResource("17_3obrr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="mapas" type="TextureButton" parent="botones"]
+layout_mode = 0
+offset_left = 1016.25
+offset_top = 456.75
+offset_right = 1535.25
+offset_bottom = 715.75
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("16_id2bo")
+texture_pressed = ExtResource("17_3obrr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="particulas" type="TextureButton" parent="botones"]
+visible = false
+layout_mode = 0
+offset_top = 330.0
+offset_right = 69.0
+offset_bottom = 651.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("32_8ulk4")
+texture_pressed = ExtResource("33_f05c5")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="estelas" type="TextureButton" parent="botones"]
+visible = false
+layout_mode = 0
+offset_left = 1232.0
+offset_top = 330.0
+offset_right = 1301.0
+offset_bottom = 651.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("34_52oq6")
+texture_pressed = ExtResource("35_4a56u")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="obstaculos" type="TextureButton" parent="botones"]
+visible = false
+layout_mode = 0
+offset_top = 330.0
+offset_right = 69.0
+offset_bottom = 651.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(1.25001, 258.75)
+toggle_mode = true
+texture_normal = ExtResource("52_5lgch")
+texture_pressed = ExtResource("53_hidoq")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("18_jq6dd")
+
+[node name="boton_sound" type="AudioStreamPlayer" parent="botones"]
+stream = ExtResource("64_1xbau")
+bus = &"SFX"
+
+[node name="comprado_sound" type="AudioStreamPlayer" parent="botones"]
+stream = ExtResource("65_1uxe3")
+bus = &"SFX"
+
+[connection signal="gui_input" from="RichTextLabel" to="." method="_on_rich_text_label_gui_input"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin3/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin3/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin3/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin3/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin3/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin3/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin4/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin4/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin4/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin4/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin4/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin4/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin5/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin5/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin5/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin5/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin5/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin5/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin6/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin6/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin6/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin6/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin6/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin6/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin7/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin7/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin7/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin7/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin7/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin7/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin8/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin8/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin8/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin8/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin8/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin8/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin9/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin9/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin9/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin9/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin9/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin9/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin10/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin10/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/botines/CanvasGroup/Botin10/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/botines/CanvasGroup/Botin10/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/botines/CanvasGroup/Botin10/btn_botin" to="RichTextLabel/botines/CanvasGroup/Botin10/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head3/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head3/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head3/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/heads/CanvasGroup/Head3/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/heads/CanvasGroup/Head3/btn_botin" to="RichTextLabel/heads/CanvasGroup/Head3/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head4/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head4/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head4/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/heads/CanvasGroup/Head4/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/heads/CanvasGroup/Head4/btn_botin" to="RichTextLabel/heads/CanvasGroup/Head4/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head5/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head5/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/heads/CanvasGroup/Head5/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/heads/CanvasGroup/Head5/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/heads/CanvasGroup/Head5/btn_botin" to="RichTextLabel/heads/CanvasGroup/Head5/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota2/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota2/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota2/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota2/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota2/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota2/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota3/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota3/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota3/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota3/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota3/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota3/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota4/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota4/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota4/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota4/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota4/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota4/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota5/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota5/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota5/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota5/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota5/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota5/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota6/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota6/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota6/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota6/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota6/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota6/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota7/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota7/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota7/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota7/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota7/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota7/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota8/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota8/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota8/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota8/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota8/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota8/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota9/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota9/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota9/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota9/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota9/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota9/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota10/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota10/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/pelotas/CanvasGroup/Pelota10/btn_botin" to="RichTextLabel/pelotas" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/pelotas/CanvasGroup/Pelota10/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/pelotas/CanvasGroup/Pelota10/btn_botin" to="RichTextLabel/pelotas/CanvasGroup/Pelota10/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder3/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder3/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder3/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/poderes/CanvasGroup/Poder3/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/poderes/CanvasGroup/Poder3/btn_botin" to="RichTextLabel/poderes/CanvasGroup/Poder3/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder4/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder4/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder4/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/poderes/CanvasGroup/Poder4/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/poderes/CanvasGroup/Poder4/btn_botin" to="RichTextLabel/poderes/CanvasGroup/Poder4/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder5/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder5/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder5/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/poderes/CanvasGroup/Poder5/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/poderes/CanvasGroup/Poder5/btn_botin" to="RichTextLabel/poderes/CanvasGroup/Poder5/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder6/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder6/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/poderes/CanvasGroup/Poder6/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/poderes/CanvasGroup/Poder6/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/poderes/CanvasGroup/Poder6/btn_botin" to="RichTextLabel/poderes/CanvasGroup/Poder6/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/particulas/CanvasGroup/Particula1/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/particulas/CanvasGroup/Particula1/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/particulas/CanvasGroup/Particula1/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/particulas/CanvasGroup/Particula1/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/particulas/CanvasGroup/Particula1/btn_botin" to="RichTextLabel/particulas/CanvasGroup/Particula1/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/particulas/CanvasGroup/Particula2/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/particulas/CanvasGroup/Particula2/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/particulas/CanvasGroup/Particula2/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/particulas/CanvasGroup/Particula2/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/particulas/CanvasGroup/Particula2/btn_botin" to="RichTextLabel/particulas/CanvasGroup/Particula2/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/estelas/CanvasGroup/Estela1/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/estelas/CanvasGroup/Estela1/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/estelas/CanvasGroup/Estela1/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/estelas/CanvasGroup/Estela1/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/estelas/CanvasGroup/Estela1/btn_botin" to="RichTextLabel/estelas/CanvasGroup/Estela1/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa2/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa2/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa2/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/mapas/CanvasGroup/Mapa2/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/mapas/CanvasGroup/Mapa2/btn_botin" to="RichTextLabel/mapas/CanvasGroup/Mapa2/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa3/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa3/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa3/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/mapas/CanvasGroup/Mapa3/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/mapas/CanvasGroup/Mapa3/btn_botin" to="RichTextLabel/mapas/CanvasGroup/Mapa3/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa4/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa4/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa4/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/mapas/CanvasGroup/Mapa4/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/mapas/CanvasGroup/Mapa4/btn_botin" to="RichTextLabel/mapas/CanvasGroup/Mapa4/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa5/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa5/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa5/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/mapas/CanvasGroup/Mapa5/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/mapas/CanvasGroup/Mapa5/btn_botin" to="RichTextLabel/mapas/CanvasGroup/Mapa5/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa6/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa6/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa6/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/mapas/CanvasGroup/Mapa6/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/mapas/CanvasGroup/Mapa6/btn_botin" to="RichTextLabel/mapas/CanvasGroup/Mapa6/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa7/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa7/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/mapas/CanvasGroup/Mapa7/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/mapas/CanvasGroup/Mapa7/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/mapas/CanvasGroup/Mapa7/btn_botin" to="RichTextLabel/mapas/CanvasGroup/Mapa7/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo2/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo2/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo2/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo2/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo2/btn_botin" to="RichTextLabel/obstaculos/CanvasGroup/Obstaculo2/btn_botin" method="_on_pressed"]
+[connection signal="get_botin" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo3/btn_botin" to="." method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo3/btn_botin" to="botines_dict" method="_on_btn_botin_get_botin"]
+[connection signal="get_botin" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo3/btn_botin" to="RichTextLabel/botines" method="_on_btn_botin_get_botin"]
+[connection signal="gui_input" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo3/btn_botin" to="." method="_on_botin_1_gui_input"]
+[connection signal="pressed" from="RichTextLabel/obstaculos/CanvasGroup/Obstaculo3/btn_botin" to="RichTextLabel/obstaculos/CanvasGroup/Obstaculo3/btn_botin" method="_on_pressed"]
+[connection signal="button_up" from="btn_atras" to="." method="_on_btn_atras_button_up"]
+[connection signal="button_up" from="botones/btn_comprar" to="botines_dict" method="_on_btn_comprar_button_up"]
+[connection signal="button_up" from="botones/botines" to="botones/botines" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/botines" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/botines" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/botines" to="botones" method="_on_btn_botines_get_seleccion"]
+[connection signal="button_up" from="botones/heads" to="botones/heads" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/heads" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/heads" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/heads" to="botones" method="_on_btn_botines_get_seleccion"]
+[connection signal="button_up" from="botones/pelotas" to="botones/pelotas" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/pelotas" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/pelotas" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/pelotas" to="botones" method="_on_btn_botines_get_seleccion"]
+[connection signal="button_up" from="botones/poderes" to="botones/poderes" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/poderes" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/poderes" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/poderes" to="botones" method="_on_btn_botines_get_seleccion"]
+[connection signal="button_up" from="botones/mapas" to="botones/mapas" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/mapas" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/mapas" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/mapas" to="botones" method="_on_btn_botines_get_seleccion"]
+[connection signal="button_up" from="botones/particulas" to="botones/particulas" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/particulas" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/particulas" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/particulas" to="botones" method="_on_btn_botines_get_seleccion"]
+[connection signal="button_up" from="botones/estelas" to="botones/estelas" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/estelas" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/estelas" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/estelas" to="botones" method="_on_btn_botines_get_seleccion"]
+[connection signal="button_up" from="botones/obstaculos" to="botones/obstaculos" method="_on_button_up"]
+[connection signal="get_seleccion" from="botones/obstaculos" to="." method="_on_btn_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/obstaculos" to="botines_dict" method="_on_botines_get_seleccion"]
+[connection signal="get_seleccion" from="botones/obstaculos" to="botones" method="_on_btn_botines_get_seleccion"]

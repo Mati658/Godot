@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://px8q2648vk7x"]
+
+[ext_resource type="Script" path="res://Assets/images/particulas/hanabi/rocket.gd" id="1_1mygg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yac6y"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 0.5
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+damping_min = 0.5
+damping_max = 10.0
+
+[node name="rocket" type="RigidBody2D"]
+script = ExtResource("1_1mygg")
+
+[node name="tail" type="GPUParticles2D" parent="."]
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_yac6y")
+lifetime = 0.2
+explosiveness = 0.1
