@@ -273,7 +273,7 @@ func _on_estela_button_down():
 		pelota.line.width_curve = pelota.line_rayo.width_curve
 	pelota.area_disabled.disabled = false
 
-	options_node.pelota_estela = pelota.line.texture.get_path()
+	options_node.pelota_estela = pelota.line.texture.resource_path
 	options_node.line_width = pelota.line.width
 	options_node.line_nueva_curve = pelota.line.width_curve
 	options_node.pelota_area = pelota.area_disabled.disabled

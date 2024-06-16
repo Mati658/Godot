@@ -525,6 +525,7 @@ func load_config():
 
 	self.pelota_particulas = config.get_value("Pelota Propiedades", "particulas")
 	self.pelota_estela = config.get_value("Pelota Propiedades", "estela")
+	print(self.pelota_estela)
 	self.pelota_color1 = config.get_value("Pelota Propiedades", "color 1")
 	self.pelota_color2 = config.get_value("Pelota Propiedades", "color 2")
 	self.pelota_area = config.get_value("Pelota Propiedades", "area")
