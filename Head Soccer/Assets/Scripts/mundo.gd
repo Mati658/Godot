@@ -168,7 +168,8 @@ func _on_timer_timeout():
 	if flag_fin:
 		self.options_node.coins += self.coins
 		self.options_node.save_config()
-		get_tree().change_scene_to_file("res://scenes/mundo.tscn")
+		MusicManager.set_music("res://Assets/Audio/Musica/musica1.wav")
+		Transicion.change_scene("res://scenes/mundo.tscn")
 
 	
 func _on_selector_get_mapa(mapa_sprite, obstaculo_nombre):

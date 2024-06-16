@@ -90,7 +90,7 @@ func IA(delta):
 	
 	if flag_moverse:
 		distancia = Vector2(spawn_pelota.pelota.position.x - self.position.x, spawn_pelota.pelota.position.y - self.position.y)
-		if distancia.x > -300 and distancia.x < -30:
+		if distancia.x > -415 and distancia.x < -30:
 			self.move(self.spawn_pelota.pelota.position)
 			self.unkick()
 			if distancia.abs().y > 30 and distancia.x > -85 and distancia.x < -65:
