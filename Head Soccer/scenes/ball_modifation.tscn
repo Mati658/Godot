@@ -702,8 +702,7 @@ texture_normal = SubResource("GradientTexture2D_6aus6")
 [node name="VFX" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 10.0
-offset_right = 50.0
-offset_bottom = 40.0
+offset_right = 10.0
 
 [node name="estela" type="TextureButton" parent="VFX"]
 layout_mode = 2
@@ -726,8 +725,7 @@ autoplay = "rayo"
 [node name="VFX2" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 10.0
-offset_right = 50.0
-offset_bottom = 40.0
+offset_right = 10.0
 
 [node name="coin" type="TextureButton" parent="VFX2"]
 layout_mode = 0

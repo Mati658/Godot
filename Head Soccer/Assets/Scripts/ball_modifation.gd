@@ -234,9 +234,10 @@ func _on_btn_activar_button_down():
 func _on_btn_vfx_button_down():
 	if pelota.particulas != null:
 		pelota.particulas.emitting = false
-	pelota.line.texture = load("")
+	if pelota.line.texture != null:
+		pelota.line.texture = null
+		pelota.line.width_curve = options_node.line_original_curve
 	pelota.line.width = 40
-	pelota.line.width_curve = options_node.line_original_curve
 	pelota.area_disabled.disabled = true
 
 	options_node.pelota_particulas = ""

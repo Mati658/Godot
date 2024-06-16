@@ -18,17 +18,14 @@ func _process(delta):
 		pelota.sprite.texture = self.pelota_sprite
 
 func _on_timer_timeout():
-
-	#si eligen el modo tenis, poner impulso al azar en la primera ronda.
-	#👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆
 	if self.mundo.flag_gol_p1:
 		pelota.apply_central_impulse(Vector2(300,0))
 	elif self.mundo.flag_gol_p2:
 		pelota.apply_central_impulse(Vector2(-300,0))
 	elif self.mundo.flag_tenis:
-		var impulso = [300, -300]
-		pelota.apply_central_impulse(Vector2(impulso.pick_random,0))
-		print("hola")
+		var impulso : Array = [300, -300]
+		print(impulso)
+		pelota.apply_central_impulse(Vector2(impulso.pick_random(),0))
 
 
 func _on_selector_get_pelota(sprite_):
